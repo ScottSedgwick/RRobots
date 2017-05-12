@@ -35,6 +35,8 @@ All you need to implement is the tick method which should accept a hash
 of events occured turing the last tick.
 
 By including Robot you get all this methods to control your bot:
+| Method              | Description                                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | battlefield_height  | The height of the battlefield                                                                                         |
 | battlefield_width   | The width of the battlefield                                                                                          |
 | energy              | Your remaining energy (if this drops below 0 you are dead)                                                            |
@@ -76,11 +78,13 @@ To start a match call:
 ```
 ruby rrobots.rb [resolution] [#match] [-nogui] [-speed=<N>] [-timeout=<N>] <FirstRobotClassName[.rb]> <SecondRobotClassName[.rb]> <...>
 ```
-| resolution   | optional | Should be of the form 640x480 or 800*600.                                                   | Default is 800x800 |
-| match        | optional | To replay a match, put the match# here, including the #sign.                                |                    |
-| -nogui       | optional | Run the match without the gui, for highest possible speed.  Ignores speed value if present. |                    |
-| -speed=<N>   | optional | Updates GUI after every N ticks. The higher the N, the faster the match will play.          | Default is 1       |
-| -timeout=<N> | optional | Number of ticks a match will last at most.                                                  | Default is 5000    |
+| Argument     | Optional? | Description                                                                                 | Default |
+| ------------ | --------- | ------------------------------------------------------------------------------------------- | ------- |
+| resolution   | optional  | Should be of the form 640x480 or 800*600.                                                   | 800x800 |
+| match        | optional  | To replay a match, put the match# here, including the #sign.                                |         |
+| -nogui       | optional  | Run the match without the gui, for highest possible speed.  Ignores speed value if present. |         |
+| -speed=<N>   | optional  | Updates GUI after every N ticks. The higher the N, the faster the match will play.          | 1       |
+| -timeout=<N> | optional  | Number of ticks a match will last at most.                                                  | 5000    |
 
 The names of the rb files have to match the class names of the robots (up to 8 robots), e.g. `ruby rrobots.rb SittingDuck NervousDuck` or `ruby rrobots.rb 600x600 #1234567890 SittingDuck NervousDuck`
 
@@ -88,9 +92,11 @@ If you want to run a tournament call:
 ```
 ruby tournament.rb [-timeout=<N>] [-matches=<N>] (-dir=<Directory> | <RobotClassName[.rb]>+)
 ```
-| -timeout=<N>     | Optional | Number of ticks a match will last at most.                            | Default is 10000 |
-| -matches=<N>     | Optional | How many times each robot fights every other robot.                   | Default is 2     |
-| -dir=<Directory> |          | All .rb files from that directory will be matched against each other. |                  |
+| Argument         | Optional? | Description                                                           | Default |
+| ---------------- | --------- | --------------------------------------------------------------------- | ------- |
+| -timeout=<N>     | Optional  | Number of ticks a match will last at most.                            | 10000   |
+| -matches=<N>     | Optional  | How many times each robot fights every other robot.                   | 2       |
+| -dir=<Directory> |           | All .rb files from that directory will be matched against each other. |         |
     
 The names of the rb files have to match the class names of the robots.
 
