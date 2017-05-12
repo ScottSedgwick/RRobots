@@ -35,6 +35,7 @@ All you need to implement is the tick method which should accept a hash
 of events occured turing the last tick.
 
 By including Robot you get all this methods to control your bot:
+
 | Method              | Description                                                                                                           |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | battlefield_height  | The height of the battlefield                                                                                         |
